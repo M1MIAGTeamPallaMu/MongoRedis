@@ -4,19 +4,24 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.annotations.Reference;
 
 import java.util.List;
 
-@Entity(value = "customer")
+/**
+ * {@link Entity} is the same as in JPA
+ * Value is the name that will be given to collection
+ * By default, the collection name in the mongodb database is the class name
+ * {@literal noClassnameStored} is used to tell the database whether or not to store the class name
+ */
+@Entity(value = "customer", noClassnameStored = true)
 public class Customer {
     /**
-     *
+     * We use {@link ObjectId} Mongodb type that auto generates an document id
      */
     @Id
     private ObjectId customerId;
     /**
-     *
+     * Annotation {@link Embedded} will store customerAddress(es) objects inside the customer document
      */
     @Embedded
     private List<Address> customerAddress;
