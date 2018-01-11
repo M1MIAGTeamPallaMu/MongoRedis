@@ -17,7 +17,7 @@ public class App
     {
         Morphia morphiaObject = new Morphia();
         MongoClient mongoClient = new MongoClient();
-        morphiaObject.map(Customer.class).map(Address.class);
+        morphiaObject.map(Customer.class).map(Address.class).map(Article.class);
         Datastore datastore = morphiaObject.createDatastore(mongoClient,"mongoLab");
 
         /*
@@ -68,6 +68,12 @@ public class App
         address4.setCity( "Newry" );
         address4.setPostCode( "5777" );
         address4.setCountry( "Puerto Rico" );
+        address.setCustomer(joshua);
+        address0.setCustomer(joshua);
+        address1.setCustomer(helen);
+        address2.setCustomer(helen);
+        address3.setCustomer(marc);
+        address4.setCustomer(marc);
 
         /*
          * Creating articles
@@ -91,21 +97,18 @@ public class App
         helen.setCustomerAddress(Arrays.asList(address1, address2));
         marc.setCustomerAddress(Arrays.asList(address4,address3));
 
-        datastore.save(joshua);
-        datastore.save(helen);
-        datastore.save(marc);
         datastore.save(address);
         datastore.save(address0);
         datastore.save(address1);
         datastore.save(address2);
         datastore.save(address3);
         datastore.save(address4);
+        datastore.save(joshua);
+        datastore.save(helen);
+        datastore.save(marc);
         datastore.save(article);
         datastore.save(article1);
         datastore.save(article2);
         datastore.save(article3);
-
-        for (Customer e : datastore.find(Customer. class ))
-            System.out.println(e);
     }
 }

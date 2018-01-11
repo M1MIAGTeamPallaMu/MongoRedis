@@ -18,9 +18,7 @@ public class Address {
      */
     @Id
     public ObjectId addressId;
-    /**
-     * Annotation {@link Embedded} will store customerAddress(es) objects inside the customer document
-     */
+
     @Embedded
     private Customer customer;
     /**

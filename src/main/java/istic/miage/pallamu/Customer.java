@@ -28,6 +28,7 @@ public class Customer {
     /**
      *
      */
+    @Embedded
     private List<Article> articles;
     /**
      *

@@ -1,1 +1,1 @@
-# MongoRedis
+# MongoRedis - Practical Lab Session
