@@ -1,12 +1,14 @@
 package istic.miage.pallamu;
 
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 
-@Entity
+@Entity(value = "address")
 public class Address {
     /**
      *
      */
+    @Embedded
     private Customer customer;
 
     /**

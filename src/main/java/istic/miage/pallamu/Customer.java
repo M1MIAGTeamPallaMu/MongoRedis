@@ -2,14 +2,17 @@ package istic.miage.pallamu;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Reference;
 
 import java.util.List;
 
-@Entity
+@Entity(value = "customer")
 public class Customer {
     /**
      *
      */
+    @Reference
     private List<Address> customerAddress;
     /**
      *
@@ -18,6 +21,7 @@ public class Customer {
     /**
      *
      */
+    @Id
     private ObjectId customerId;
     /**
      *
