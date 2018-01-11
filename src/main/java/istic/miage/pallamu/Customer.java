@@ -1,6 +1,7 @@
 package istic.miage.pallamu;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
@@ -12,17 +13,17 @@ public class Customer {
     /**
      *
      */
-    @Reference
+    @Id
+    private ObjectId customerId;
+    /**
+     *
+     */
+    @Embedded
     private List<Address> customerAddress;
     /**
      *
      */
     private List<Article> articles;
-    /**
-     *
-     */
-    @Id
-    private ObjectId customerId;
     /**
      *
      */

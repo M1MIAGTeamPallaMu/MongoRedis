@@ -1,10 +1,18 @@
 package istic.miage.pallamu;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 @Entity(value = "address")
 public class Address {
+    /**
+     *
+     */
+    @Id
+    public ObjectId addressId;
+
     /**
      *
      */
@@ -31,6 +39,13 @@ public class Address {
      */
     private String country;
 
+    public ObjectId getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(ObjectId addressId) {
+        this.addressId = addressId;
+    }
 
     public Customer getCustomer() {
         return customer;
