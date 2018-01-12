@@ -75,6 +75,13 @@ public class App
         address3.setCustomer(marc);
         address4.setCustomer(marc);
 
+        datastore.save(address);
+        datastore.save(address0);
+        datastore.save(address1);
+        datastore.save(address2);
+        datastore.save(address3);
+        datastore.save(address4);
+
         /*
          * Creating articles
          */
@@ -85,24 +92,18 @@ public class App
 
         /*
          * Assigning them customers who bought these articles
-         */
+        */
         article.setCustomers(Arrays.asList(helen, joshua, marc));
         article1.setCustomers(Arrays.asList(helen, joshua));
         article3.setCustomers(Arrays.asList(marc, helen));
 
         /*
          * Assigning addresses to customers
-         */
-        joshua.setCustomerAddress(Arrays.asList(address, address0));
-        helen.setCustomerAddress(Arrays.asList(address1, address2));
-        marc.setCustomerAddress(Arrays.asList(address4,address3));
+        */
+        //TODO find a way to add adresses
+       //helen.setCustomerAddress(Arrays.asList(address1, address2));
+       //marc.setCustomerAddress(Arrays.asList(address4,address3));
 
-        datastore.save(address);
-        datastore.save(address0);
-        datastore.save(address1);
-        datastore.save(address2);
-        datastore.save(address3);
-        datastore.save(address4);
         datastore.save(joshua);
         datastore.save(helen);
         datastore.save(marc);
@@ -110,5 +111,11 @@ public class App
         datastore.save(article1);
         datastore.save(article2);
         datastore.save(article3);
+
+        for (Article e : datastore.find(Article.class))
+            System.err.println(e.getCustomers().toString());
+
     }
+
+
 }
