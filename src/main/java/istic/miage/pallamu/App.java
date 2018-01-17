@@ -5,13 +5,15 @@ import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Mongo App
  *
  */
-public class App 
+public class App
 {
     public static void main( String[] args ) throws UnknownHostException
     {
@@ -101,8 +103,11 @@ public class App
          * Assigning addresses to customers
         */
         //TODO find a way to add adresses
-       //helen.setCustomerAddress(Arrays.asList(address1, address2));
-       //marc.setCustomerAddress(Arrays.asList(address4,address3));
+        List<Address> l = new ArrayList<Address>();
+        l.add(address0);
+        helen.setCustomerAddress(l);
+       //helen.setCustomerAddress(Arrays.asList(address2, address0));
+       //marc.setCustomerAddress(Arrays.asList(address3, address1));
 
         datastore.save(joshua);
         datastore.save(helen);
