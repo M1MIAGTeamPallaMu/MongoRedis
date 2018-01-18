@@ -15,8 +15,11 @@ De plus les requetes sont moins fléxibles ou certaines commodités des bases re
 
 ##### Quelles sont les types de données stockés dans Redis, que peut on faire comme types de requêtes ? (à répondre dans le compte rendu de TP (le readme)
 
-Redis est orienté clé valeur, ce sont donc des couples de valeurs qui sont stockés. Une clé peut avoir plusieurs valeurs.
-Il est possible d'ajouter une valeur, supprimer une valeur ou voir les valeurs d'une clé avec Redis.
+Redis est orienté clé valeur, ce sont donc des couples de valeurs (String, Hash, Sets ou Listes) qui sont stockés. Une clé peut avoir plusieurs valeurs.
+
+Il est possible d'ajouter une valeur (SET), supprimer () une valeur ou voir les valeurs (GET) d'une clé avec Redis.
+Il est également possible d'incrémenter un nombre contenu dans une clé (INCR)
+
 
 
 
