@@ -1,13 +1,10 @@
-package istic.miage.pallamu;
+package istic.miage.pallamu.mongo;
 
 import com.mongodb.MongoClient;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Mongo App
@@ -95,27 +92,27 @@ public class App
         /*
          * Assigning them customers who bought these articles
         */
-        article.setCustomers(Arrays.asList(helen, joshua, marc));
-        article1.setCustomers(Arrays.asList(helen, joshua));
-        article3.setCustomers(Arrays.asList(marc, helen));
+        System.out.println(article.getCustomers());
+        //article1.setCustomers(Arrays.asList(helen, joshua));
+        //article3.setCustomers(Arrays.asList(marc, helen));
 
         /*
          * Assigning addresses to customers
         */
         //TODO find a way to add adresses
-        List<Address> l = new ArrayList<Address>();
+        /*List<Address> l = new ArrayList<Address>();
         l.add(address0);
-        helen.setCustomerAddress(l);
+        helen.setCustomerAddress(l);*/
        //helen.setCustomerAddress(Arrays.asList(address2, address0));
        //marc.setCustomerAddress(Arrays.asList(address3, address1));
 
-        datastore.save(joshua);
+        /*datastore.save(joshua);
         datastore.save(helen);
         datastore.save(marc);
         datastore.save(article);
         datastore.save(article1);
         datastore.save(article2);
-        datastore.save(article3);
+        datastore.save(article3);*/
 
         for (Article e : datastore.find(Article.class))
             System.err.println(e.getCustomers().toString());

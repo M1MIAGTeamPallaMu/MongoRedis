@@ -1,4 +1,4 @@
-package istic.miage.pallamu;
+package istic.miage.pallamu.mongo;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
@@ -30,6 +30,7 @@ public class Customer {
      */
     @Embedded
     private List<Article> articles;
+
     /**
      *
      */
